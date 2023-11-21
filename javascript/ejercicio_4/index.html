@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.20.0.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.20.0.js"></script>
+
+    <script type="module">
+        import { arrayDiff } from './src/index.js'
+
+        QUnit.test('Array diff Sample tests',
+            (assert) => {
+                assert.deepEqual([], arrayDiff([], [4, 5]))
+                assert.deepEqual([4], arrayDiff([3, 4], [3]))
+                assert.deepEqual([3], arrayDiff([1, 2, 3], [1, 2]))
+                assert.deepEqual([3, 5], arrayDiff([3, 5, 6, 6, 6, 6], [6]))
+                assert.deepEqual([9, 6, 7], arrayDiff([9, 6, 7, 2, 1, 3], [1, 2, 3]))
+            })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+Python
+
+Los ejercicios fueron realizados en un entorno windows con la versión Python 3.12.0
+Para ejecutar las pruebas unitarias, favor de aplicar el siguiente comando sobre la carpeta del ejercicio.
+
+- python3 -m unittest -v test
+
+Javascript
+Para ejecutar las pruebas unitarias, favor de realizarlo sobre un servidor web.
+Abriendo el archivo "index.html" que se encuentra en cada ejercicio.
+

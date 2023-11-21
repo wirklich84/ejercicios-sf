@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.20.0.css">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.20.0.js"></script>
+    <script src="src/index.js"></script>
+    <script>
+
+        QUnit.test('Should return False for pins with length other than 4 or 6',
+            (assert) => {
+                assert.equal(false, validatePIN("1"))
+                assert.equal(false, validatePIN("123"))
+                assert.equal(false, validatePIN("1234567"))
+                assert.equal(false, validatePIN("00000000"))
+                assert.equal(false, validatePIN("00000000"))
+
+                assert.equal(false, validatePIN("a234"))
+                assert.equal(false, validatePIN(".234"))
+            })
+
+        QUnit.test('Should return False for pins which contain characters other than digits',
+            (assert) => {
+
+                assert.equal(false, validatePIN("a234"))
+                assert.equal(false, validatePIN(".234"))
+            })
+
+        QUnit.test('should return True for valid pins',
+            (assert) => {
+
+                assert.equal(true, validatePIN("1234"))
+                assert.equal(true, validatePIN("1111"))
+                assert.equal(true, validatePIN("123456"))
+                assert.equal(true, validatePIN("098765"))
+            })
+
+    </script>
+</body>
+
+</html>

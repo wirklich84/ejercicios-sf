@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.20.0.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.20.0.js"></script>
+    <script type="module">
+        import { findMissingLetter } from './src/index.js'
+
+        QUnit.test('Initial Tests',
+            (assert) => {
+                assert.equal('e', findMissingLetter(['a', 'b', 'c', 'd', 'f']))
+                assert.equal('P', findMissingLetter(['O', 'Q', 'R', 'S']))
+
+            })
+
+
+        QUnit.test('Tests with results in false',
+            (assert) => {
+                assert.equal(false, findMissingLetter(['O', 'P', 'Q', 'R']))
+                assert.equal(false, findMissingLetter(['E']))
+                assert.equal(false, findMissingLetter(['a', '$', 'c', 'd', 'f']))
+                assert.equal(false, findMissingLetter(['a', 'B', 'c', 'd', 'f']))
+                assert.equal(false, findMissingLetter(['Z', 'Y', 'R', 'Q', 'I']))
+            }
+        )
+
+
+    </script>
+
+</body>
+
+</html>
